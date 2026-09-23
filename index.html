@@ -6,7 +6,7 @@
     <title>Re:che</title>
     <meta
       name="description"
-      content="欲しかったのはこういう副業。在宅型サステナ講座「Re:che」"
+      content="すきま時間に＋８万円。〜“わたし“の選択肢を増やす副業のはじめ方〜。在宅型サステナ講座「Re:che」"
     />
     <meta name="format-detection" content="telephone=no" />
 
@@ -32,7 +32,7 @@
     <meta property="og:title" content="Re:che" />
     <meta
       property="og:description"
-      content="欲しかったのはこういう副業。在宅型サステナ講座「Re:che」"
+      content="すきま時間に＋８万円。〜“わたし“の選択肢を増やす副業のはじめ方〜。在宅型サステナ講座「Re:che」"
     />
     <meta property="og:image" content="images/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Noto+Sans+JP:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -89,6 +89,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero-20260923.css" />
     <!-- js -->
     <script src="js/main.js" defer></script>
   </head>
@@ -121,21 +122,31 @@
       </div>
     </header>
     <div class="kv">
-      <div class="kv_box">
-        <img
-          src="img/FV_sp.png"
-          alt="メガネをかけた女性が微笑んでいる画像"
-          class="kv_sp_img"
-          width="750"
-          height="1044"
-        />
-        <img
-          src="img/FV_pc.png"
-          alt="メガネをかけた女性が微笑んでいる画像"
-          class="kv_pc_img"
-          width="2526"
-          height="1787"
-        />
+      <div class="kv_box kv_box--renewal">
+        <section class="reche-hero" aria-labelledby="reche-hero-heading">
+          <div class="reche-hero__visual">
+            <img
+              class="reche-hero__person"
+              src="img/hero-person-20260923.png"
+              width="1024"
+              height="1536"
+              alt="ピンクの髪とネイビー・イエローのジャケットの女性"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <div class="reche-hero__partnership" aria-label="ブックオフ提携スクール">
+            <img src="img/bookoff-official.png" alt="BOOKOFF" width="114" height="114" />
+            <p><span>ブックオフ</span><span>提携スクール</span></p>
+          </div>
+          <div class="reche-hero__copy">
+            <h2 id="reche-hero-heading" class="reche-hero__heading">
+              <span class="reche-hero__lead">すきま時間に</span>
+              <span class="reche-hero__amount">＋８万円</span>
+            </h2>
+            <p class="reche-hero__subtitle"><span>〜<em>“わたし“</em>の選択肢を増やす</span><span>副業のはじめ方〜</span></p>
+          </div>
+        </section>
       </div>
       <div class="mv_box">
         <h2 class="mv_logo">
@@ -893,5 +904,26 @@
         </div>
       </div>
     </footer>
+    <!-- プロライン連携: 広告のクリック情報と広告名(utm_content)をLINE友だち追加に引き継ぐ(2026-09-16追加) -->
+    <script>
+      (function () {
+        try {
+          // 広告名はutm_contentから取得。無ければmain(本体広告・広告以外)として記録。英数字と_-のみ許可
+          var p = new URLSearchParams(location.search);
+          var src = (p.get("utm_content") || "main").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 60);
+          var el = document.createElement("span");
+          el.className = "proline-copy-qr-get-params";
+          el.setAttribute("data-key", "free6");
+          el.setAttribute("data-value", src);
+          el.hidden = true;
+          document.body.appendChild(el);
+          // LINEボタン(4か所)をプロライン公式スクリプトの書き換え対象にする
+          document.querySelectorAll('a[href*="j4b9oaqz.autosns.app"]').forEach(function (a) {
+            a.classList.add("addfriend_href");
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <script src="https://j4b9oaqz.autosns.app/embed/addfriend.js" data-partner-id="Gf7DMtGWRT" data-show-qr="0"></script>
   </body>
 </html>

@@ -1,0 +1,148 @@
+/* Re:che hero renewal: the photograph, typography and background remain separate. */
+.kv:has(.kv_box--renewal)::before { display: none; }
+.kv_box--renewal { width: 100%; }
+.reche-hero {
+  --hero-navy: #163354;
+  --hero-blue: #009ed4;
+  --hero-rose: #efa5c8;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1920px;
+  aspect-ratio: 2.355 / 1;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: clamp(18px, 2.1vw, 40px);
+  color: var(--hero-navy);
+  background: linear-gradient(115deg, #edf7ff 0%, #ffffff 52%, #f1f8ff 100%);
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+.reche-hero__visual {
+  position: absolute;
+  inset: 0 47% 0 3%;
+  overflow: hidden;
+  z-index: 0;
+}
+.reche-hero .reche-hero__person {
+  position: absolute;
+  top: -8%;
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  /* No blend modes, color filters or overlays on the face. */
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+}
+.reche-hero__partnership {
+  position: absolute;
+  z-index: 2;
+  top: 7%;
+  left: 3.8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: min(15vw, 288px);
+  aspect-ratio: 1;
+  padding: .9% 1%;
+  border: clamp(2px, .19vw, 4px) solid #123778;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 14px #173d6910;
+  color: #123778;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+.reche-hero__partnership img {
+  display: block;
+  width: min(64%, 114px);
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 3%;
+}
+.reche-hero__partnership p {
+  width: 100%;
+  padding-top: 6%;
+  border-top: 1px solid #123778;
+  text-align: center;
+  font-size: clamp(12px, 1.32vw, 25px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .015em;
+}
+.reche-hero__partnership p span { display: block; }
+.reche-hero__copy {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 46%;
+  right: 3.5%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.reche-hero__heading { margin: 0; font-weight: 500; letter-spacing: -.035em; }
+.reche-hero__lead {
+  display: block;
+  font-size: clamp(36px, 5.65vw, 108px);
+  line-height: 1.45;
+  white-space: nowrap;
+}
+.reche-hero__amount {
+  display: block;
+  margin: -.015em 0 .025em;
+  color: var(--hero-blue);
+  font-size: clamp(72px, 10.7vw, 205px);
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: -.065em;
+  white-space: nowrap;
+}
+.reche-hero__subtitle {
+  margin: .1em 0 0;
+  font-size: clamp(13px, 1.5vw, 28px);
+  line-height: 1.9;
+  font-weight: 500;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.reche-hero__subtitle > span { display: inline-block; }
+.reche-hero__subtitle em {
+  font-style: normal;
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--hero-rose);
+  text-decoration-thickness: .13em;
+  text-underline-offset: .22em;
+  text-decoration-skip-ink: none;
+}
+@media (max-width: 767px) {
+  .reche-hero { aspect-ratio: auto; border-radius: 0; padding-bottom: 7vw; }
+  .reche-hero__visual {
+    position: relative;
+    inset: auto;
+    height: 109vw;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(#000 calc(100% - 35px), transparent);
+    mask-image: linear-gradient(#000 calc(100% - 35px), transparent);
+  }
+  .reche-hero .reche-hero__person { width: 100%; top: -2%; left: 9%; }
+  .reche-hero__partnership {
+    top: 4.2vw;
+    left: 4.2vw;
+    width: 27.5%;
+    height: 27.5vw;
+    padding: 2.4% 2.5% 2.1%;
+    border-width: 2px;
+  }
+  .reche-hero__partnership img { width: 63%; height: auto; max-height: 11vw; margin-bottom: 3%; }
+  .reche-hero__partnership p { font-size: clamp(10px, 3vw, 23px); line-height: 1.4; padding-top: 4%; }
+  .reche-hero__copy { position: relative; inset: auto; transform: none; width: 94%; margin: -3vw auto 0; }
+  .reche-hero__lead { font-size: 10.3vw; line-height: 1.4; letter-spacing: -.055em; }
+  .reche-hero__amount { font-size: 20vw; line-height: 1.3; margin: 0; letter-spacing: -.065em; }
+  .reche-hero__subtitle { font-size: clamp(13px, 3.65vw, 27px); line-height: 1.85; margin-top: 2vw; letter-spacing: -.025em; }
+  .reche-hero__subtitle > span { display: block; white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) { .reche-hero * { animation: none !important; transition: none !important; } }
